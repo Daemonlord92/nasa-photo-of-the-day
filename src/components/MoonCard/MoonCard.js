@@ -1,19 +1,20 @@
-import React, { useEffect } from 'react';
-import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import './MoonCard.css'
 
-const MoonCard = () => {
-	useEffect(() => {
-		axios
-			.get(`https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_API_KEY}`)
-			.then(response => {
-				console.log(response)
 
-			})
-			.catch(error => console.log("DANGER WILL ROBERTSON", error))
-	}, [])
+const MoonCard = ({title, description, image, date }) => {
+
+	
 
 	return (
-		<div />	
+		<div>
+			<div>
+				<h1>Title: {title}</h1>
+				<p>Date: {date}</p>
+				<img src={image} />
+				<p>{description}</p>
+			</div>
+		</div>	
 	)
 }
 
