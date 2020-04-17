@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { Card, CardImg, CardText, CardTitle, CardImgOverlay } from 'reactstrap';
 import './MoonCard.css'
 
 
@@ -8,12 +9,15 @@ const MoonCard = ({title, description, image, date }) => {
 
 	return (
 		<div>
-			<div>
-				<h1>Title: {title}</h1>
-				<p>Date: {date}</p>
-				<img src={image} />
-				<p>{description}</p>
-			</div>
+			<Card style={{opicity:'0.5'}}>
+        <CardImgOverlay>			
+					<CardTitle style={{color:'white'}}>Title: {title}</CardTitle>
+					<CardText style={{color:'white'}}>Date: {date}</CardText>
+					
+					<CardText style={{color:'white'}}>{description}</CardText>
+				</CardImgOverlay>
+				<CardImg src={image} style={{ margin:'0 auto' }} />
+			</Card>
 		</div>	
 	)
 }

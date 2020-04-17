@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Jumbotron } from 'reactstrap';
 import "./App.css";
 
 import axios from 'axios';
@@ -22,7 +23,9 @@ function App() {
 
   return (
     <div className="App">
-    	<h1 className='web-title'>NASA Astro picture of the day!</h1>
+      <Jumbotron style={{margin: '0 auto', padding:'15px' }}>
+    	  <h1 className='web-title'>NASA Astro picture of the day!</h1>
+      </Jumbotron>
       <MoonCard
       	title={pic.title}
       	description={pic.explanation}
